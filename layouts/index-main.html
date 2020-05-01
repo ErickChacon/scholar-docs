@@ -1,0 +1,62 @@
+{{ partial "header.html" . }}
+
+<div class="jumbotron">
+  <div class="container">
+   <div class="row">
+
+    <div class="col-lg-4 col-sm-12 vcenter mx-auto">
+      <div class="text-center">
+        <img src="/images/{{ .Site.Params.image }}" class="img-fluid center-block rounded-circle">
+        <h4 class="display-10  text-center"> {{ .Site.Params.author }} </h4>
+        <p class="text-muted text-center">
+        {{ .Site.Params.role }}<br>
+        {{ .Site.Params.organization }}<br>
+        </p>
+      </div>
+    </div>
+
+    <div class="col-lg-8 col-sm-12 text-justify d-flex align-items-center">
+    {{ .Content }}
+    </div>
+
+   </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-lg-4 offset-lg-1 col-sm-12 order-lg-1 order-md-3">
+      <h4>Education</h4>
+      <ul>
+        {{ range .Params.education }}
+        <div>
+        <li> {{.course}} </li>
+        <p class = "mb-1 text-secondary"> {{ .university }}, {{ .years}} </p>
+        </div>
+        {{ end }}
+      </ul>
+    </div>
+
+    <div class="col-lg-4 col-sm-7 order-lg-2 order-md-1">
+      <h4>Research Interests</h4>
+      <ul>
+        {{ range .Params.interests }}
+        <li> {{.}} </li>
+        {{ end }}
+      </ul>
+    </div>
+
+    <div class="col-lg-3 col-sm-5 order-lg-3 order-md-2">
+      <h4>Applications</h4>
+      <ul>
+        {{ range .Params.applications }}
+        <li> {{.}} </li>
+        {{ end }}
+      </ul>
+    </div>
+    </div>
+  </div>
+</div>
+
+{{ partial "footer.html" . }}

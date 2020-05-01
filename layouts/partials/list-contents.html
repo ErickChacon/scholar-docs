@@ -1,0 +1,51 @@
+
+
+{{ if (isset .Params "menu") }}
+  {{ range $i, $e := .Params.menu }}
+    {{ $.Scratch.Add "menuname" $i }}
+  {{ end }}
+  {{ $menuname := (printf "%s" ($.Scratch.Get "menuname"))}}
+  {{ $.Scratch.Add "mymenu" (index .Site.Menus $menuname).ByWeight}}
+{{ end }}
+
+<div class="container">
+
+  <div class="col-lg-8 offset-lg-2 col-md-12 offset-md-0">
+  <h3 class="text-center"> Table of Contents </h3> <hr>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-12 offset-md-0 text-justify">
+      <ul class="fa-ul">
+        {{ range ($.Scratch.Get "mymenu") }}
+          {{ if .HasChildren }}
+            <li><i class="fa-li fa fa-folder text-secondary"></i>
+              <a class="font-weight-bold"> {{ .Title }} </a>
+            </li>
+            <ul class="fa-ul">
+              {{range .Children}}
+                {{ if .HasChildren }}
+                  <li><i class="fa-li fa fa-folder text-secondary"></i>
+                    <a class="font-weight-bold text-secondary"> {{ .Title }} </a>
+                  </li>
+                  <ul class="fa-ul">
+                    {{range .Children}}
+                      <li> {{ partial "item-link-file.html" . }} </li>
+                    {{end}}
+                  </ul>
+                {{ else }}
+                  <li> {{ partial "item-link-file.html" . }} </li>
+                {{ end }}
+              {{ end }}
+            </ul>
+          {{ else }}
+            {{ if ne .Name "menuroot" }}
+              <li> {{ partial "item-link-file.html" . }} </li>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+
+</div>

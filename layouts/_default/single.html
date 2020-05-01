@@ -1,0 +1,42 @@
+
+{{ partial "header.html" . }}
+
+
+<style type="text/css" media="screen">
+body {
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+</style>
+
+
+<div class="container">
+
+  <br>
+  <h2 class = "col-lg-8 offset-lg-2 col-md-12 text-center"> {{ .Params.title }} </h2>
+  <div class="col-lg-8 offset-lg-2 col-md-12 text-center">
+  {{ range .Params.tags}}
+    <span class="badge badge-primary badge-pill font-weight"> {{ . }}</span>
+  {{ end }}
+  </div>
+
+  <div class="d-flex col-lg-8 offset-lg-2 w-100 justify-content-between">
+    <p class="font-weight-light">
+      {{ dateFormat "January 2, 2006" .Params.date}}
+    </p>
+    <small>
+    <p class="font-weight-light">
+      {{ .ReadingTime }} min
+    </p>
+    </small>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-12 offset-md-0 text-justify">
+      {{ .Content }}
+    </div>
+  </div>
+
+</div>
+
+{{ partial "footer.html" . }}

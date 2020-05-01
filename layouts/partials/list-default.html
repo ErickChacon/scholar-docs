@@ -1,0 +1,20 @@
+
+<div class="container">
+  <div class="col-lg-8 offset-lg-2 col-md-12 offset-md-0 text-justify">
+    <div class="list-group">
+      {{ range .Data.Pages }}
+      <a href="{{ .RelPermalink }}" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1 text-primary"> {{ .Title }} </h5>
+          <small>{{ .ReadingTime }} min</small>
+        </div>
+        <p class="mb-1">{{ .Summary }} </p>
+        <!-- <small>{{ .PublishDate.Format "January 2006" }}</small> -->
+        {{ range .Params.tags}}
+        <span class="badge badge-light badge-pill text-secondary"> {{ . }}</span>
+        {{ end }}
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</div>

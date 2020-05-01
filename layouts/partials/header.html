@@ -1,0 +1,76 @@
+
+<!doctype html>
+<html lang="{{ with .Site.LanguageCode }}{{.}}{{ else }}en-us{{ end}}">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap 4 CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{{ "/css/basic.css" | relURL }}" />
+  <!-- Font Awesome Free CDN -->
+  <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384&#45;+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script> -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+  <!-- highlight.js from x-min -->
+  <script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="{{ "/css/gruvbox.dark.css" | relURL }}"> -->
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- MathJax from x-min -->
+  <!-- <script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX&#45;MML&#45;AM_CHTML"></script> -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/javascript">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    "HTML-CSS": { scale: 90}
+  });
+</script>
+  <!-- Web details -->
+  <title>{{ .Title }} - {{ .Site.Title }}</title>
+  <meta name="author" content="{{ .Site.Params.name }}">
+
+  <!-- Custom styles for this template -->
+  <link href="css/simple-sidebar.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href=" {{ .Site.BaseURL }}">
+          <i class='fa {{ .Site.Params.faicon }}'></i>
+          {{ .Site.Title | markdownify }}
+        </a>
+        <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbar9">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbar9">
+          <ul class="navbar-nav ml-auto">
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.main }}
+            {{ if .HasChildren }}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {{ .Name }}</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                {{ range .Children }}
+                <a class="dropdown-item" href="{{ .URL }}"> {{ .Name }}</a>
+                {{ end }}
+              </div>
+            </li>
+            {{else}}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ .URL }}"> {{ .Name }}</a>
+            </li>
+            {{end}}
+            {{end}}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>

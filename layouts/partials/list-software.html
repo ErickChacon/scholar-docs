@@ -1,0 +1,50 @@
+
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row mb-2">
+    {{ range .Sections }}
+      {{ $currentSection := .}}
+      {{ range .Data.Pages }}
+      <div class="col-lg-10 col-md-12 offset-lg-1">
+        <div class="card flex-md-row mb-4 box-shadow h-md-250">
+          <img class="card-img-right col-lg-3 col-md-4 border-right rounded" src={{ "/images/" | relURL }}{{ .Params.image }} alt="Card image cap" style="padding:0;">
+          <div class="card-body d-flex flex-column align-items-start ml-0 border-primary">
+            <strong class="d-inline-block mb-2 text-primary">
+              {{ $currentSection.Title }}
+            </strong>
+            <h5 class="mb-0">
+              <a class="text-dark" href="#">{{ .Params.shortitle }}</a>
+            </h5>
+            <div class="mb-1 text-muted">{{ .Title }}</div>
+            <p class="card-text mb-auto">
+            {{ .Content  }}
+            </p>
+          <a href="{{ .Params.link }}" target="_blank">
+            <button type="button" class="btn btn-sm btn-outline-primary">Go to repository</button>
+          </a>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+<!--  -->
+      <!-- <div class="col&#45;lg&#45;10 col&#45;md&#45;12"> -->
+<!--         <div class="card flex&#45;md&#45;row mb&#45;4 box&#45;shadow h&#45;md&#45;250"> -->
+<!--           <div class="card&#45;body d&#45;flex flex&#45;column align&#45;items&#45;start"> -->
+<!--             <strong class="d&#45;inline&#45;block mb&#45;2 text&#45;primary">R Package</strong> -->
+<!--             <h5 class="mb&#45;0"> -->
+<!--               <a class="text&#45;dark" href="#">day2day</a> -->
+<!--             </h5> -->
+<!--             <div class="mb&#45;1 text&#45;muted">Functions for Day&#45;to&#45;Day Data Analysis</div> -->
+<!--             <p class="card&#45;text mb&#45;auto"> -->
+<!-- Functions that can be useful in the day&#45;to&#45;day data analysis. It comprehends functions to find paths for projects, make summaries of databases inside folder and so on. -->
+<!--             </p> -->
+<!--             <button type="button" class="btn btn&#45;sm btn&#45;outline&#45;primary">Go to repository</button> -->
+<!--           </div> -->
+<!--           <img class="card&#45;img&#45;top col&#45;lg&#45;3 col&#45;md&#45;4 border&#45;left rounded" src="/images/frontmatter.jpg" alt="Card image cap" style="padding:0;"  > -->
+<!--         </div> -->
+<!--       </div> -->

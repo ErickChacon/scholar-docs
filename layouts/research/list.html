@@ -1,0 +1,130 @@
+
+{{ partial "header.html" . }}
+
+
+<style type="text/css" media="screen">
+body {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+</style>
+
+<style type="text/css" media="screen">
+  @media (min-width:576px) {
+      .card-columns {
+        column-count: 1;
+      }
+  }
+    @media (min-width:768px) {
+      .card-columns {
+        column-count: 1;
+      }
+  }
+  @media (min-width:992px) {
+      .card-columns {
+        column-count: 2;
+      }
+  }
+  @media (min-width:1200px) {
+      .card-columns {
+        column-count: 2;
+      }
+  }
+</style>
+
+<div class="jumbotron">
+  <div class="container">
+    <h2 class="text-center"> {{ .Title }} </h2>
+    <div class="col-lg-8 offset-lg-2 col-md-12 text-justify">
+      {{ .Content }}
+    </div>
+  </div>
+</div>
+
+{{ range .Sections }}
+  <div class="container">
+
+    <h2 class="text-center"> {{ .Title }} </h2>
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1 col-md-12 text-justify">
+        <hr>
+      </div>
+    </div>
+
+    {{ if eq .Params.slug "papers" }}
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1 col-md-12 text-justify">
+          <ul class="fa-ul">
+            {{ range (.Data.Pages).Reverse }}
+            {{ $RelPermalink := .RelPermalink }}
+            {{ range .Params.references }}
+            <li><i class="fa-li fa fa-file text-secondary"></i>
+              <div id="ref-"{{ .id }}>
+                {{ $len := (len .author) }}
+                  {{ range $index, $element := .author}}
+                    {{ if eq (add $index 1) 1 }}
+                      {{ .family }}, {{ .given}},
+                    {{ else if lt (add $index 2) $len}}
+                      {{ .given}} {{ .family }},
+                    {{ else if lt (add $index 1) $len}}
+                      {{ .given }} {{ .family}} and
+                    {{ else if eq (add $index 1) $len}}
+                      {{ .given }} {{ .family}},
+                    {{ end }}
+                  {{ end }}
+                {{ (index .issued 0).year }}.
+                <a class="font-weight-light">
+                  “{{ .title | markdownify }}.”
+                </a>
+              {{ if eq .type "article-journal" }}
+                <em> {{ index . "container-title" }} </em>
+                {{ .volume }} ({{ .issue }}): {{ .page }}.
+                {{ if isset . "DOI"}}
+                  doi:<a href="https://doi.org/{{ .DOI }}"> {{ .DOI }}</a>.
+                {{ end }}
+              {{ else }}
+                <em>{{ .publisher }}</em>, {{ .page }} p.
+              {{ end }}
+              </div>
+            </li>
+            <a  class="badge badge-primary" href="{{ $RelPermalink }}"
+              role="button">Summary</a>
+            {{ if isset . "DOI"}}
+            <a  class="badge badge-primary" href="https://doi.org/{{ .DOI }}"
+              role="button">DOI</a>
+            {{ end }}
+            <!-- <a class="badge badge&#45;primary" href="#" role="button">PDF</a> -->
+            {{ end }}
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+    {{ else if eq .Params.slug "talks" }}
+
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1 col-md-12 text-justify">
+          <ul class="fa-ul">
+            {{ range .Data.Pages }}
+            <li><i class="fa-li fa fa-slideshare text-secondary"></i>
+              <div id="talk-bl">
+                <a class="font-weight-light">
+                  “{{ .Params.title }}.”
+                </a>
+                <em> {{ .Params.event }}, </em>
+                {{ .Params.location }},
+                {{ dateFormat "2006" .Params.date}}.
+              </div>
+            </li>
+            <a  class="badge badge-primary" href="{{ .RelPermalink }}"
+              role="button">Summary</a>
+            <a class="badge badge-primary" href="#" role="button">Slides</a>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+    {{ end }}
+
+  </div>
+{{ end }}
+
+{{ partial "footer.html" . }}
