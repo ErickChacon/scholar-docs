@@ -43,6 +43,16 @@
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
 
+.collap {
+  /* hide it for small displays*/
+  display: none;
+}
+
+#sidebarr {
+  /* for the animation */
+  transition: margin 0.3s ease;
+}
+
 /* #navbarNav { */
 /*     background: blue; */
 /* } */
