@@ -1,127 +1,52 @@
 
 {{ partial "header.html" . }}
 
-    <div class="container-fluid">
 
-      <div class="row">
-    <!-- <div class="container&#45;fluid"> -->
-<nav class="navbar sticky-top bg-dark navbarsa">
-    hola
-    </nav>
-          <!-- </div> -->
+<div class="container-fluid">
+    <!-- <div class="row"> -->
+    <!--    <div class="col&#45;10 bg&#45;dark"> -->
+    <!--       hola hola hola hola hola hola -->
+    <!--       hola hola hola hola hola hola -->
+    <!--       hola hola hola -->
+    <!--    </div>  -->
+    <!--    <div class="col"> -->
+    <!--       hola fd -->
+    <!--    </div>  -->
+    <!-- </div> -->
 
+    <div class="row">
 
-      <!--   <!&#45;&#45; <nav class="col&#38;#45;lg&#38;#45;3 col&#38;#45;md&#38;#45;3 d&#38;#45;none d&#38;#45;md&#38;#45;block bg&#38;#45;light sidebar"> &#45;&#45;> -->
-      <!--   <nav class="col&#45;3 d&#45;none d&#45;md&#45;block bg&#45;light sidebar"> -->
-      <!-- <a class="navbar&#45;brand col&#45;1 mr&#45;0" href="#">Company name</a> -->
-      <!--     <div class="sidebar&#45;sticky"> -->
-      <!--         <ol> -->
-      <!--             <li> Cleaning -->
-      <!--                 {{ .TableOfContents }} -->
-      <!--             </li> -->
-      <!--             <li> Processing -->
-      <!--                 {{ .TableOfContents }} -->
-      <!--             </li> -->
-      <!--         </ol> -->
-      <!--     </div> -->
-      <!--   </nav> -->
-
-    <!-- <nav class="navbar navbar&#45;expand&#45;md navbar&#45;dark bg&#45;dark fixed&#45;top"> -->
-<nav class="navbar sticky-top col-9 offset-3 navbar-dark bg-dark navbars">
-      <div class="container">
-      <!-- <a class="navbar&#45;brand col&#45;6 mr&#45;0" href="#">Company name</a> -->
-          <!-- <span class="navbar&#45;toggler&#45;icon"></span> -->
-        <button class="navbar-toggler float-right" type="button" data-toggle="collapse">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href=" {{ .Site.BaseURL }}">
-          Land suitability
-        </a>
-        <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbar9">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse" id="navbar9">
-          <ul class="navbar-nav ml-auto">
-            {{ $currentPage := . }}
-            {{ range .Site.Menus.main }}
-            <li class="nav-item">
-              <a class="nav-link" href="{{ .URL }}"> {{ .Name }}</a>
-            </li>
-            {{end}}
-          </ul>
+        <div class="col-3 bg-light sidebar">
+            <nav class="navbar navbar-dark bg-light border-bottom">
+                <a class="navbar-brand text-primary" href="#">Navbar</a>
+            </nav>
+            <div class="sidebar-sticky">
+              <ol>
+                  <li> Cleaning
+                      {{ .TableOfContents }}
+                  </li>
+                  <li> Processing
+                      {{ .TableOfContents }}
+                  </li>
+              </ol>
+          </div>
         </div>
-      </div>
-    </nav>
+
+        <nav class="navbar col-9 offset-3 navbar-dark bg-dark sticky-top navbars">
+            <a class="navbar-brand" href="#">bla</a>
+        </nav>
 
 
 
-<!-- <nav class="navbar sticky&#45;top col&#45;9 offset&#45;3 navbar&#45;dark bg&#45;dark navbars"> -->
-<!--   <a class="navbar&#45;brand" href="#">Navbar</a> -->
-<!--   <button class="navbar&#45;toggler" type="button" data&#45;toggle="collapse" data&#45;target="#navbarNav" aria&#45;controls="navbarNav" aria&#45;expanded="false" aria&#45;label="Toggle navigation"> -->
-<!--     <span class="navbar&#45;toggler&#45;icon"></span> -->
-<!--   </button> -->
-<!--   <div class="collapse navbar&#45;collapse"> -->
-<!--     <ul class="navbar&#45;nav"> -->
-<!--       <li class="nav&#45;item active"> -->
-<!--         <a class="nav&#45;link" href="#">Home <span class="sr&#45;only">(current)</span></a> -->
-<!--       </li> -->
-<!--       <li class="nav&#45;item"> -->
-<!--         <a class="nav&#45;link" href="#">Features</a> -->
-<!--       </li> -->
-<!--       <li class="nav&#45;item"> -->
-<!--         <a class="nav&#45;link" href="#">Pricing</a> -->
-<!--       </li> -->
-<!--       <li class="nav&#45;item"> -->
-<!--         <a class="nav&#45;link disabled" href="#">Disabled</a> -->
-<!--       </li> -->
-<!--     </ul> -->
-<!--   </div> -->
-<!-- </nav> -->
+        <main role="main" class="col-9 ml-auto pt-3 px-4">
 
-<!-- <div class="collapse navbar&#45;collapse" id="navbarSupportedContent"> -->
-<!--     <ul class="navbar&#45;nav mr&#45;auto"> -->
-<!--     <!&#45;&#45; <div class="navbar&#38;#45;collapse collapse"> &#45;&#45;> -->
-<!--         <!&#45;&#45; <ul class="navbar&#38;#45;nav"> &#45;&#45;> -->
-<!--             <li class="nav&#45;item"> -->
-<!--                 <a class="nav&#45;link" href="#"> bla </a> -->
-<!--             </li> -->
-<!--             <li class="nav&#45;item"> -->
-<!--                 <a class="nav&#45;link" href="#"> fdsaf </a> -->
-<!--             </li> -->
-<!--             <li class="nav&#45;item"> -->
-<!--                 <a class="nav&#45;link" href="#"> fdsadfas </a> -->
-<!--             </li> -->
-<!--         </ul> -->
-<!--     </div> -->
+            <div class="col-lg-12 text-justify">
+                {{ .Content }}
+            </div>
+        </main>
 
-    <!-- <button class="navbar&#45;toggler float&#45;left" type="button" data&#45;toggle="collapse" data&#45;target="#navbar9"> -->
-    <!--     <span class="navbar&#45;toggler&#45;icon"></span> -->
-    <!-- </button> -->
-    <!-- <a href="#">bla </a> -->
-    <!-- <a class="navbar&#45;brand" href="#">Land suitability</a> -->
-    <!-- <a class="navbar&#45;brand" href=" {{ .Site.BaseURL }}"> -->
-    <!--     <i class='fa {{ .Site.Params.faicon }}'></i> -->
-    <!--     Land suitability -->
-    <!-- </a> -->
-<!-- </nav> -->
-
-
-        <main role="main" class="col-lg-8 col-md-9 ml-sm-auto pt-3 px-4">
-<!-- <div class="d&#45;flex flex&#45;row navbars"> -->
-<!--   <div class="p&#45;2">Flex item 1</div> -->
-<!--   <div class="p&#45;2">Flex item 2</div> -->
-<!--   <div class="p&#45;2">Flex item 3</div> -->
-<!-- </div> -->
-
-          <!-- Hola pinche main this is a very long text to see what is phappening -->
-    <div class="col-lg-12 text-justify">
-      {{ .Content }}
     </div>
 
-
-
-        </main>
-  </div>
-  </div>
+</div>
 
 {{ partial "footer.html" . }}

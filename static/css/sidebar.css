@@ -1,0 +1,125 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template-overviews/simple-sidebar)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+/* body { */
+  /* overflow-x: auto; */
+  /* overflow-y: auto; */
+/* } */
+
+/* ol, ul { */
+/*   counter-reset: item */
+/* } */
+/* li { */
+/*   display: block */
+/* } */
+/* li:before { */
+/*   content: counters(item, ".") " "; */
+/*   counter-increment: item */
+/* } */
+
+.sidebar {
+  position: fixed;
+  /* top: 50px; */
+  top: 0px;
+  /* min-width:30vh; */
+  /* bottom: 0; */
+  /* left: 0; */
+  z-index: 100; /* Behind the navbar */
+  padding: 0;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+  /* margin-left: -15rem; */
+}
+
+.navbars {
+  /* position: fixed; */
+  /* height: 55px; */
+  /* top: 0; */
+  /* bottom: 0; */
+  /* left: 0; */
+  /* z-index: 100; /* Behind the navbar */ */
+  /* padding-left: 0; */
+  /* box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1); */
+  /* margin-left: -15rem; */
+}
+
+.navbarsa {
+  position: fixed;
+  /* height: 55px; */
+  top: 0;
+  /* bottom: 0; */
+  left: 0;
+  /* z-index: 100; /* Behind the navbar */ */
+  /* padding-left: 0; */
+  /* box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1); */
+  /* margin-left: -15rem; */
+}
+
+
+#navbarNav {
+    background: blue;
+}
+
+
+.collapsed {
+  /* hide it for small displays*/
+  display: none;
+}
+
+
+.sidebar-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 48px; /* Height of navbar */
+  height: calc(100vh - 48px - 110px);
+  /* height: 100vh; */
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  max-height: 70vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+  /* overflow-x: auto; */
+  overflow-y: auto;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}

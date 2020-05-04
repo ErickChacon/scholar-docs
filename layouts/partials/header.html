@@ -35,42 +35,112 @@
   <meta name="author" content="{{ .Site.Params.name }}">
 
   <!-- Custom styles for this template -->
-  <link href="css/simple-sidebar.css" rel="stylesheet">
+  <link href="css/sidebar.css" rel="stylesheet">
+  <!-- <link href="css/dashboard.css" rel="stylesheet"> -->
+<!--   <script> -->
+<!-- var shiftWindow = function() { scrollBy(0, &#45;50) }; -->
+<!-- if (location.hash) shiftWindow(); -->
+<!-- window.addEventListener("hashchange", shiftWindow); -->
+<!--   </script> -->
 </head>
 
 <body>
 
   <header>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href=" {{ .Site.BaseURL }}">
-          <i class='fa {{ .Site.Params.faicon }}'></i>
-          {{ .Site.Title | markdownify }}
-        </a>
-        <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbar9">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse" id="navbar9">
-          <ul class="navbar-nav ml-auto">
-            {{ $currentPage := . }}
-            {{ range .Site.Menus.main }}
-            {{ if .HasChildren }}
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {{ .Name }}</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown01">
-                {{ range .Children }}
-                <a class="dropdown-item" href="{{ .URL }}"> {{ .Name }}</a>
-                {{ end }}
-              </div>
-            </li>
-            {{else}}
-            <li class="nav-item">
-              <a class="nav-link" href="{{ .URL }}"> {{ .Name }}</a>
-            </li>
-            {{end}}
-            {{end}}
-          </ul>
-        </div>
-      </div>
-    </nav>
+
+
+<!--     <nav class="navbar navbar&#45;dark bg&#45;dark sticky&#45;top flex&#45;nowrap"> -->
+<!--         <!&#45;&#45; <div class="container&#38;#45;fluid"> &#45;&#45;> -->
+<!--     <div class="col&#45;3"> -->
+<!-- <input class="form&#45;control form&#45;control&#45;dark" type="text" placeholder="Search" aria&#45;label="Search"> -->
+<!--     </div> -->
+<!--       <a class="navbar&#45;brand col&#45;sm&#45;3 col&#45;md&#45;2 mr&#45;0" href="#">Company name</a> -->
+<!--             <!&#45;&#45; <div class= "row"> &#45;&#45;> -->
+<!--             <!&#45;&#45;     <div class= "col&#38;#45;3"> &#45;&#45;> -->
+<!--             <!&#45;&#45;         <a class="bg&#38;#45;primary" href="#">Company name</a> &#45;&#45;> -->
+<!--             <!&#45;&#45;     </div> &#45;&#45;> -->
+<!--             <!&#45;&#45;     <div class= "col&#38;#45;9"> &#45;&#45;> -->
+<!--             <!&#45;&#45;         <a class="bg&#38;#45;secondary" href="#">Company name</a> &#45;&#45;> -->
+<!--             <!&#45;&#45;     </div> &#45;&#45;> -->
+<!--             <!&#45;&#45; </div> &#45;&#45;> -->
+<!--         <!&#45;&#45; </div> &#45;&#45;> -->
+<!--     </nav> -->
+
+    <!-- <nav class="navbar navbar&#45;expand&#45;md navbar&#45;dark bg&#45;dark fixed&#45;top"> -->
+    <!--   <div class="container&#45;fluid"> -->
+    <!--   <a class="navbar&#45;brand col&#45;4 bg&#45;primary" href="#">Company name</a> -->
+    <!--       <!&#45;&#45; <span class="navbar&#38;#45;toggler&#38;#45;icon"></span> &#45;&#45;> -->
+    <!--     <button class="navbar&#45;toggler float&#45;right" type="button" data&#45;toggle="collapse"> -->
+    <!--       <span class="navbar&#45;toggler&#45;icon"></span> -->
+    <!--     </button> -->
+    <!--     <a class="navbar&#45;brand" href=" {{ .Site.BaseURL }}"> -->
+    <!--       Land suitability -->
+    <!--     </a> -->
+    <!--     <button class="navbar&#45;toggler float&#45;right" type="button" data&#45;toggle="collapse" data&#45;target="#navbar9"> -->
+    <!--       <span class="navbar&#45;toggler&#45;icon"></span> -->
+    <!--     </button> -->
+    <!--     <div class="navbar&#45;collapse collapse" id="navbar9"> -->
+    <!--       <ul class="navbar&#45;nav ml&#45;auto"> -->
+    <!--         {{ $currentPage := . }} -->
+    <!--         {{ range .Site.Menus.main }} -->
+    <!--         <li class="nav&#45;item"> -->
+    <!--           <a class="nav&#45;link" href="{{ .URL }}"> {{ .Name }}</a> -->
+    <!--         </li> -->
+    <!--         {{end}} -->
+    <!--       </ul> -->
+    <!--     </div> -->
+    <!--   </div> -->
+    <!-- </nav> -->
+
+
+    <!-- <nav class="navbar navbar&#45;expand&#45;md navbar&#45;dark bg&#45;dark fixed&#45;top"> -->
+    <!--   <div class="container"> -->
+    <!--     <a class="navbar&#45;brand" href=" {{ .Site.BaseURL }}"> -->
+    <!--       <i class='fa {{ .Site.Params.faicon }}'></i> -->
+    <!--       {{ .Site.Title | markdownify }} -->
+    <!--     </a> -->
+    <!--     <button class="navbar&#45;toggler float&#45;right" type="button" data&#45;toggle="collapse" data&#45;target="#navbar9"> -->
+    <!--       <span class="navbar&#45;toggler&#45;icon"></span> -->
+    <!--     </button> -->
+    <!--     <div class="navbar&#45;collapse collapse" id="navbar9"> -->
+    <!--       <ul class="navbar&#45;nav ml&#45;auto"> -->
+    <!--         {{ $currentPage := . }} -->
+    <!--         {{ range .Site.Menus.main }} -->
+    <!--         {{ if .HasChildren }} -->
+    <!--         <li class="nav&#45;item dropdown"> -->
+    <!--           <a class="nav&#45;link dropdown&#45;toggle" href="http://example.com" id="dropdown01" data&#45;toggle="dropdown" aria&#45;haspopup="true" aria&#45;expanded="false"> {{ .Name }}</a> -->
+    <!--           <div class="dropdown&#45;menu" aria&#45;labelledby="dropdown01"> -->
+    <!--             {{ range .Children }} -->
+    <!--             <a class="dropdown&#45;item" href="{{ .URL }}"> {{ .Name }}</a> -->
+    <!--             {{ end }} -->
+    <!--           </div> -->
+    <!--         </li> -->
+    <!--         {{else}} -->
+    <!--         <li class="nav&#45;item"> -->
+    <!--           <a class="nav&#45;link" href="{{ .URL }}"> {{ .Name }}</a> -->
+    <!--         </li> -->
+    <!--         {{end}} -->
+    <!--         {{end}} -->
+    <!--       </ul> -->
+    <!--     </div> -->
+    <!--   </div> -->
+    <!-- </nav> -->
+
   </header>
+
+
+<!-- <!&#45;&#45; sidebar &#45;&#45;> -->
+<!--         <nav class="col&#45;3 d&#45;none d&#45;md&#45;block bg&#45;light sidebar"> -->
+<!--       <a class="navbar&#45;brand col&#45;1 mr&#45;0" href="#">Company name</a> -->
+<!--           <div class="sidebar&#45;sticky"> -->
+<!--               <ol> -->
+<!--                   <li> Cleaning -->
+<!--                       {{ .TableOfContents }} -->
+<!--                   </li> -->
+<!--                   <li> Processing -->
+<!--                       {{ .TableOfContents }} -->
+<!--                   </li> -->
+<!--               </ol> -->
+<!--           </div> -->
+<!--         </nav> -->
+
