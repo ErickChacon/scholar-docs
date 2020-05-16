@@ -1,34 +1,24 @@
-
 {{ partial "header.html" . }}
-
 
 <div class="container-fluid">
     <div class="row">
 
-        <div class="col-lg-3 col-md-4 d-none d-md-block bg-light sidebar"
-            id="sidebarr">
+        <div class="col-lg-3 col-md-4 col-sm-8 col-10 d-none d-md-block bg-light sidebar" id="sideid">
             <div class="sidebar-sticky border-right">
                 <nav class="navbar navbar-expand navbar-dark bg-light border-bottom">
-                    <!-- <form class="form&#45;inline my&#45;2 my&#45;lg&#45;0"> -->
                         <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                    <!-- </form> -->
                 </nav>
                 {{ partial "sidebar-menu.html" . }}
-
             </div>
         </div>
 
 
-        <!-- <nav class="navbar navbar&#45;expand&#45;md col&#45;9 offset&#45;3 navbar&#45;dark bg&#45;dark sticky&#45;top"> -->
-        <nav class="navbar navbar-expand-md col-lg-9 col-md-8 offset-lg-3 offset-md-4 navbar-dark bg-dark sticky-top">
-            <!-- <div class="container"> -->
-                <button class="btn btn-outline-secondary" type="button"
-                    id="menu-toggle">
+        <nav class="navbar navbar-expand-md col-lg-9 col-md-8 offset-lg-3 offset-md-4
+            navbar-dark bg-dark sticky-top" id="navtop">
+                <button class="btn btn-outline-secondary" type="button" id="menu-toggle">
                     <span class="navbar-toggler-icon"></span>
-                    <!-- Toggle menu -->
                 </button>
                 <a class="navbar-brand pl-3 mr-auto" href=" {{ .Site.BaseURL }}">
-                    <!-- <i class='fa {{ .Site.Params.faicon }}'></i> -->
                     {{ .Site.Title | markdownify }}
                 </a>
                 <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbar9">
@@ -45,15 +35,16 @@
                         {{end}}
                     </ul>
                 </div>
-            <!-- </div> -->
         </nav>
 
-        <main role="main" class="col-lg-9 col-md-8 offset-lg-3 offset-md-4 ml-auto pt-3 px-4">
-
-
+        <main role="main" class="col-lg-9 col-md-8 ml-auto pt-3 px-4" id="cont">
+            <br>
+            <br>
+            <h1 class = "col-lg-8 offset-lg-2 col-md-12 text-center"> {{ .Params.title }} </h1>
+            <br>
+            <br>
             <div class="col-lg-10 offset-lg-1 col-md-12 offset-md-0 col-sm-10
                 offset-sm-1 col-xs-12 text-justify homepage-text">
-            <!-- <div class="col&#45;8 offset&#45;2 text&#45;justify"> -->
                 {{ .Content }}
             </div>
         </main>
@@ -61,22 +52,25 @@
     </div>
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
-  <!-- <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+<script>
+$(document).ready(function(){
+    $("#menu-toggle").click(function(){
+        // small devices
+        $("#sideid").toggleClass("d-block d-none");
 
-  <!-- <script> -->
-  <!--   $("#menu&#45;toggle").click(function(e) { -->
-  <!--     e.preventDefault(); -->
-  <!--     $("#wrapper").toggleClass("toggled"); -->
-  <!--   }); -->
-  <!-- </script> -->
-<!-- <script charset="utf&#45;8"> -->
-<!--     $("#menu&#45;toggle").click(function(e) { -->
-<!--       e.preventDefault(); -->
-<!--       // $("#wrapper").toggleClass("toggled"); -->
-<!--     $("#sidebarr").toggleClass("collap"); -->
-<!--     }); -->
-<!-- </script> -->
+        $("#sideid").toggleClass("toggled");
+        // medium devices
+        $("#navtop").toggleClass("offset-md-0 offset-md-4");
+        $("#navtop").toggleClass("col-md-12 col-md-8");
+        $("#cont").toggleClass("col-md-12 col-md-8");
+        // large devices
+        $("#navtop").toggleClass("offset-lg-0 offset-lg-3");
+        $("#navtop").toggleClass("col-lg-12 col-lg-9");
+        $("#cont").toggleClass("col-lg-12 col-lg-9");
+  });
+});
+</script>
 
 {{ partial "footer.html" . }}

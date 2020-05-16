@@ -1,23 +1,5 @@
-/*!
- * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template-overviews/simple-sidebar)
- * Copyright 2013-2019 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
- */
-/* body { */
-  /* overflow-x: auto; */
-  /* overflow-y: auto; */
-/* } */
+/* https://stackoverflow.com/questions/10405945/html-ordered-list-1-1-1-2-nested-counters-and-scope-not-working */
 
-/* ol, ul { */
-/*   counter-reset: item */
-/* } */
-/* li { */
-/*   display: block */
-/* } */
-/* li:before { */
-/*   content: counters(item, ".") " "; */
-/*   counter-increment: item */
-/* } */
 
 .sidebar {
   position: fixed;
@@ -27,6 +9,14 @@
   z-index: 100; /* Behind the navbar */
   padding: 0;
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+/* Medium devices */
+@media (min-width: 768px) {
+    .toggled {
+        /* display:node; */
+        width: 0px;
+    }
 }
 
 .sidebar-sticky {
@@ -43,20 +33,70 @@
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
 
+.sidebar-sticky ol {
+    counter-reset: item;
+}
+.sidebar-sticky ol > li {
+    counter-increment: item;
+    margin-left: -10px;
+}
+.sidebar-sticky ol ol > li {
+    display: block;
+    margin-left: -10px;
+}
+.sidebar-sticky ol ol > li:before {
+    content: counters(item, ".") ". ";
+    margin-left: -25px;
+}
+
+/* @media (min-width: 992px) { */
+/*     .collapsed { */
+/*         display: block; */
+/*         margin-left: -25%; /* same width as sidebar */ */
+/*     } */
+/* } */
+
+
+/* #wrapper.toggled .sidebar { */
+/*   margin-left: -50; */
+/* } */
+
+/* format of table of content list */
+/* .sidebar-sticky ol { */
+/*   /* counter-reset: item; */ */
+/*   margin-left:-15px; */
+/* } */
+/* .sidebar-sticky li { */
+/*   display: block; */
+/*   margin-left:-15px; */
+/* } */
+/* .sidebar-sticky li:before { */
+/*   content: counters(item, ".") " "; */
+/*   counter-increment: item; */
+/*   padding-right:5px; */
+/*   /* margin-left:-30px; */ */
+/* } */
+
+
+
 .collap {
   /* hide it for small displays*/
   display: none;
 }
 
-#sidebarr {
-  /* for the animation */
-  transition: margin 0.3s ease;
+.list-group-item {
+    display: list-item;
 }
 
-#sidebarre {
-  /* for the animation */
-  transition: margin 0.3s ease;
-}
+/* #sidebarr { */
+/*   /* for the animation */ */
+/*   transition: margin 0.3s ease; */
+/* } */
+/*  */
+/* #sidebarre { */
+/*   /* for the animation */ */
+/*   transition: margin 0.3s ease; */
+/* } */
 
 
 /* #navbarNav { */

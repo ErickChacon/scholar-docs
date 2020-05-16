@@ -1,30 +1,32 @@
-      <ul class="fa-ul">
-          <br>
-        {{ range .Site.Menus.sidebar }}
-          {{ if .HasChildren }}
-            <li><i class="fa-li fa fa-folder text-secondary"></i>
-              <a class="font-weight"> {{ .Title }} </a>
-            </li>
-            <ul class="fa-ul">
-              {{range .Children}}
-                {{ if .HasChildren }}
-                  <li><i class="fa-li fa fa-folder text-secondary"></i>
-                    <a class="font-weight text-secondary"> {{ .Title }} </a>
-                  </li>
-                  <ul class="fa-ul">
+<!-- <ol class="fa&#45;ul"> -->
+<ol type="I">
+<!-- <ol> -->
+    <br>
+    {{ range .Site.Menus.sidebar }}
+    {{ if .HasChildren }}
+    <!-- <li><i class="fa&#45;li fa fa&#45;folder text&#45;secondary"></i> -->
+    <li>
+        <a class="font-weight"> {{ .Title }} </a>
+        <ol class="fa-ul">
+            {{range .Children}}
+            {{ if .HasChildren }}
+            <!-- <li><i class="fa&#45;li fa fa&#45;folder text&#45;secondary"></i> -->
+            <li>
+                <a class="font-weight text-secondary"> {{ .Title }} </a>
+                <ol class="fa-ul">
                     {{range .Children}}
-                      <li> {{ partial "item-link-file.html" . }} </li>
+                    <li> {{ partial "item-link-file.html" . }} </li>
                     {{end}}
-                  </ul>
-                {{ else }}
-                  <li> {{ partial "item-link-file.html" . }} </li>
-                {{ end }}
-              {{ end }}
-            </ul>
-          {{ else }}
-            {{ if ne .Name "menuroot" }}
-              <li> {{ partial "item-link-file.html" . }} </li>
+                </ol>
+            </li>
+            {{ else }}
+            <li> {{ partial "item-link-file.html" . }} </li>
             {{ end }}
-          {{ end }}
-        {{ end }}
-      </ul>
+            {{ end }}
+        </ol>
+    </li>
+    {{ else }}
+    <li> {{ partial "item-link-file.html" . }} </li>
+    {{ end }}
+    {{ end }}
+</ol>
