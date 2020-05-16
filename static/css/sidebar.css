@@ -53,6 +53,12 @@
   transition: margin 0.3s ease;
 }
 
+#sidebarre {
+  /* for the animation */
+  transition: margin 0.3s ease;
+}
+
+
 /* #navbarNav { */
 /*     background: blue; */
 /* } */

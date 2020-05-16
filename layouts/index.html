@@ -13,31 +13,7 @@
                         <input class="form-control" type="search" placeholder="Search" aria-label="Search">
                     <!-- </form> -->
                 </nav>
-
-                <ol>
-                    <br>
-                    <li> Cleaning
-                        {{ .TableOfContents }}
-                    </li>
-                    <li> Processing
-                        {{ .TableOfContents }}
-                    </li>
-                    <li> Processing
-                        {{ .TableOfContents }}
-                    </li>
-                    <li> Processing
-                        {{ .TableOfContents }}
-                    </li>
-                    <li> Processing
-                        {{ .TableOfContents }}
-                    </li>
-                    <li> Processing
-                        {{ .TableOfContents }}
-                    </li>
-                    <li> Processing
-                        {{ .TableOfContents }}
-                    </li>
-                </ol>
+                {{ partial "sidebar-menu.html" . }}
 
             </div>
         </div>
@@ -74,6 +50,7 @@
 
         <main role="main" class="col-lg-9 col-md-8 offset-lg-3 offset-md-4 ml-auto pt-3 px-4">
 
+
             <div class="col-lg-10 offset-lg-1 col-md-12 offset-md-0 col-sm-10
                 offset-sm-1 col-xs-12 text-justify homepage-text">
             <!-- <div class="col&#45;8 offset&#45;2 text&#45;justify"> -->
@@ -83,6 +60,7 @@
 
     </div>
 </div>
+
 
   <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
   <!-- <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->

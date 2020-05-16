@@ -2,41 +2,79 @@
 {{ partial "header.html" . }}
 
 
-<style type="text/css" media="screen">
-body {
-  padding-top: 80px;
-  padding-bottom: 60px;
-}
-</style>
+<div class="container-fluid">
+    <div class="row">
 
-<div class="container">
+        <div class="col-lg-3 col-md-4 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-stickye border-right">
+                <nav class="navbar navbar-expand navbar-dark bg-light border-bottom">
+                    <!-- <form class="form&#45;inline my&#45;2 my&#45;lg&#45;0"> -->
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <!-- </form> -->
+                </nav>
+                {{ partial "sidebar-menu.html" . }}
 
-        {{ .TableOfContents }}
-  <br>
-  <h2 class = "col-lg-8 offset-lg-2 col-md-12 text-center"> {{ .Params.title }} </h2>
-  <div class="col-lg-8 offset-lg-2 col-md-12 text-center">
-  {{ range .Params.tags}}
-    <span class="badge badge-primary badge-pill font-weight"> {{ . }}</span>
-  {{ end }}
-  </div>
+            </div>
+        </div>
 
-  <div class="d-flex col-lg-8 offset-lg-2 w-100 justify-content-between">
-    <p class="font-weight-light">
-      {{ dateFormat "January 2, 2006" .Params.date}}
-    </p>
-    <small>
-    <p class="font-weight-light">
-      {{ .ReadingTime }} min
-    </p>
-    </small>
-  </div>
 
-  <div class="row">
-    <div class="col-lg-8 offset-lg-2 col-md-12 offset-md-0 text-justify">
-      {{ .Content }}
+        <!-- <nav class="navbar navbar&#45;expand&#45;md col&#45;9 offset&#45;3 navbar&#45;dark bg&#45;dark sticky&#45;top"> -->
+        <nav class="navbar navbar-expand-md col-lg-9 col-md-8 offset-lg-3 offset-md-4 navbar-dark bg-dark sticky-top">
+            <!-- <div class="container"> -->
+                <button class="btn btn-outline-secondary" type="button"
+                    id="menu-toggle">
+                    <span class="navbar-toggler-icon"></span>
+                    <!-- Toggle menu -->
+                </button>
+                <a class="navbar-brand pl-3 mr-auto" href=" {{ .Site.BaseURL }}">
+                    <!-- <i class='fa {{ .Site.Params.faicon }}'></i> -->
+                    {{ .Site.Title | markdownify }}
+                </a>
+                <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbar9">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="navbar-collapse collapse" id="navbar9">
+                    <ul class="navbar-nav ml-auto">
+                        {{ $currentPage := . }}
+                        {{ range .Site.Menus.main }}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ .URL }}"> {{ .Name }}</a>
+                        </li>
+                        {{end}}
+                    </ul>
+                </div>
+            <!-- </div> -->
+        </nav>
+
+        <main role="main" class="col-lg-9 col-md-8 offset-lg-3 offset-md-4 ml-auto pt-3 px-4">
+
+            <div class="col-lg-10 offset-lg-1 col-md-12 offset-md-0 col-sm-10
+                offset-sm-1 col-xs-12 text-justify homepage-text">
+            <!-- <div class="col&#45;8 offset&#45;2 text&#45;justify"> -->
+                {{ .Content }}
+            </div>
+        </main>
+
     </div>
-  </div>
-
 </div>
+
+
+  <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
+  <!-- <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+
+  <!-- <script> -->
+  <!--   $("#menu&#45;toggle").click(function(e) { -->
+  <!--     e.preventDefault(); -->
+  <!--     $("#wrapper").toggleClass("toggled"); -->
+  <!--   }); -->
+  <!-- </script> -->
+<!-- <script charset="utf&#45;8"> -->
+<!--     $("#menu&#45;toggle").click(function(e) { -->
+<!--       e.preventDefault(); -->
+<!--       // $("#wrapper").toggleClass("toggled"); -->
+<!--     $("#sidebarr").toggleClass("collap"); -->
+<!--     }); -->
+<!-- </script> -->
 
 {{ partial "footer.html" . }}
