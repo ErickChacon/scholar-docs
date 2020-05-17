@@ -35,9 +35,9 @@
   <meta name="author" content="{{ .Site.Params.name }}">
 
   <!-- Custom styles for this template -->
-  <link href="/css/sidebar.css" rel="stylesheet">
-  <!-- <link href="/css/numbered.css" rel="stylesheet"> -->
-  <!-- <link href="css/dashboard.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="{{ "/css/sidebar.css" | relURL }}" />
+  <!-- <link href="/css/sidebar.css" rel="stylesheet"> -->
+  <!-- <link href="{{ .Site.BaseURL }}/css/sidebar.css" rel="stylesheet"> -->
 <!--   <script> -->
 <!-- var shiftWindow = function() { scrollBy(0, &#45;50) }; -->
 <!-- if (location.hash) shiftWindow(); -->
