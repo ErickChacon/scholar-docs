@@ -14,7 +14,7 @@
             <li>
                 <a class="font-weight text-secondary"> {{ .Title }} </a>
                 <ol class="fa-ul">
-                    {{range .Children}}
+                    {{range .Children }}
                     <li> {{ partial "item-link-file.html" . }} </li>
                     {{end}}
                 </ol>
