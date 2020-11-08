@@ -141,7 +141,7 @@ code {
 @media (min-width: 992px) {
     .homepage-text {
         /* max-width: 800px; */
-        max-width: 45rem;
+        max-width: 50rem;
         margin: 0 auto;
         float: none;
     }
