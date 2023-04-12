@@ -1,7 +1,14 @@
 # Scholar-docs
 
+## About
+
 [Hugo](https://gohugo.io/) theme using [Bootsrap 5](https://getbootstrap.com/)
 to show documentation.
+
+![Webpage example](web-example.png)
+
+
+## Features
 
 - It creates a expandable sidebar created using all the files inside the
   `content` folder. This way you can easily navigate all the pages of your
