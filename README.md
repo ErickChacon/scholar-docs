@@ -2,7 +2,7 @@
 
 ## About
 
-[Hugo](https://gohugo.io/) theme using [Bootsrap 5](https://getbootstrap.com/)
+[Hugo](https://gohugo.io/) theme using [Bootstrap 5](https://getbootstrap.com/)
 to show documentation.
 
 ![Webpage example](web-example.png)
