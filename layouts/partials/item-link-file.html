@@ -1,4 +1,4 @@
-<a href="{{ .p.Permalink }}" class="text-justify {{ if (eq .p .w)}}active{{ end }}">
+<a href="{{ .p.Permalink }}" class="text-justify {{ if (eq .p .w)}} active-link {{ end }}">
   {{ .p.Title | markdownify }}
 </a>
 

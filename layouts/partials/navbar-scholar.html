@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href=" {{ .Site.BaseURL }}">
+      <i class='fa {{ .Site.Params.faicon }}'></i> {{ .Site.Title | markdownify }}
+    </a>
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-header">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-header">
+      <ul class="navbar-nav ms-auto">
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+        {{ if .HasChildren }}
+        <li class="nav-item dropdown {{if $currentPage.HasMenuCurrent "main" .}}active{{end}}">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            {{ .Name }}
+          </a>
+          <ul class="dropdown-menu">
+            {{ range .Children }}
+            <li><a class="dropdown-item" href="{{ .URL }}"> {{ .Name }}</a></li>
+            {{ end }}
+          </ul>
+        </li>
+        {{else}}
+        <li class="nav-item">
+          <a class="nav-link {{if $currentPage.IsMenuCurrent "main" .}}active{{end}}" href="{{ .URL }}"> {{ .Name }}</a>
+        </li>
+        {{end}}
+        {{end}}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+

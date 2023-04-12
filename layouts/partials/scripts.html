@@ -1,0 +1,39 @@
+<!-- Bootstrap js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+<!-- Highlight code -->
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+<link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+<script>hljs.initHighlightingOnLoad();</script>
+
+<!-- Mathjax for equations -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    "HTML-CSS": { scale: 90}
+  });
+</script>
+
+<!-- Custom javascript to toggle layout on button sidebar-toggle -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $("#sidebar-toggle").click(function(){
+      var ww = document.body.clientWidth;
+      var myel = document.getElementById("my-lay");
+      if (ww > 768) {
+        $("#my-lay").removeClass("docs-layout-dual");
+        $("#my-lay").toggleClass("docs-layout-single");
+        $("aside").removeClass("layout-sidebar-dual");
+        $("aside").toggleClass("layout-sidebar-single");
+      } else {
+        $("#my-lay").removeClass("docs-layout-single");
+        $("#my-lay").toggleClass("docs-layout-dual");
+        $("aside").removeClass("layout-sidebar-single");
+        $("aside").toggleClass("layout-sidebar-dual");
+      };
+    });
+  });
+</script>

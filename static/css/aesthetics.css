@@ -1,0 +1,24 @@
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+code {
+  background: #f9f9f9;
+  color: black;
+  border: 1px solid #ddd;
+  padding: 0.1em;
+  box-shadow: 2px 2px 2px #eee;
+}
+
+
+.text-justify {
+    text-align: justify;
+}
+
+.active-link {
+    text-decoration:underline;
+}
+

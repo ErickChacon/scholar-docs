@@ -1,33 +1,18 @@
-
-
-<!-- <footer class="footer bg&#45;light fixed&#45;bottom text&#45;muted"> -->
-<!-- <div class="container"> -->
-<!--   <div class="row"> -->
-<!--   <div class="col&#45;md&#45;6"> -->
-<!--     {{ range $name, $path := .Site.Params.social }} -->
-<!--     <a href = "{{ $path }}" class="btn btn&#45;social&#45;icon btn&#45;lg btn&#45;{{ $name }}"> -->
-<!--       <i class="fa fa&#45;{{ $name}}"></i></a> -->
-<!--     {{ end }} -->
-<!--   </div> -->
-<!--   <div class="col&#45;md&#45;6"> -->
-<!--     <div class='float&#45;vertical&#45;align'> -->
-<!--       <small> -->
-<!--         {{ with .Site.Params.footer }} -->
-<!--         {{ . | markdownify }} -->
-<!--         {{ end }} -->
-<!--       </small> -->
-<!--     </div> -->
-<!--   </div> -->
-<!--   </div> -->
-<!-- </div> -->
-<!-- </footer> -->
-
-
-
-<!-- Optional JavaScript: jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-</body>
-</html>
+<nav class="navbar navbar-expand pt-0 pb-0">
+  <div class="container-fluid">
+    <ul class="navbar-nav me-auto">
+          {{ range $name, $path := .Site.Params.social }}
+          <li class="nav-item">
+          <a class="btn btn-social-icon btn-md" href="{{$path}}" target="_blank">
+            <i class="fa fa-{{ $name}}"></i>
+          </a>
+          </li>
+          {{ end }}
+    </ul>
+    <small class="navbar-text ms-auto">
+      {{ with .Site.Params.footer }}
+      {{ . | markdownify }}
+      {{ end }}
+    </small>
+  </div>
+</nav>

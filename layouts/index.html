@@ -1,87 +1,31 @@
-{{ partial "header.html" . }}
+<!doctype html>
+<html lang="{{with .Site.LanguageCode}}{{ . }}{{else}}en-us{{end}}">
 
+  <head>
+    {{ partial "head.html" .}}
+  </head>
 
-<div class="container-fluid">
-    <div class="row">
+  <body>
+    <div class = "docs-layout" id = "my-lay">
 
-        <div class="col-lg-3 col-md-4 col-sm-6 col-8 d-none d-md-block bg-light sidebar" id="sideid">
-            <div class="sidebar-sticky border-right">
-                <nav class="navbar navbar-expand navbar-dark bg-light border-bottom">
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                </nav>
-                {{ partial "sidebar-files.html" . }}
-            </div>
-        </div>
+      <header class = "layout-header">
+        {{ partial "header.html" .}}
+      </header>
 
+      <aside class = "layout-sidebar bg-light">
+        {{ partial "sidebar-files.html" . }}
+      </aside>
 
-        <nav class="navbar navbar-expand-md col-lg-9 col-md-8 offset-lg-3 offset-md-4
-            navbar-dark bg-dark sticky-top" id="navtop">
-                <button class="btn btn-outline-secondary" type="button" id="menu-toggle">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <a class="h5 pl-3 mr-auto text-light" href=" {{ .Site.BaseURL }}">
-                    {{ .Site.Title | markdownify }}
-                </a>
-                <!-- <button class="navbar&#45;toggler float&#45;right" type="button" data&#45;toggle="collapse" data&#45;target="#navbar9"> -->
-                <!--     <span class="navbar&#45;toggler&#45;icon"></span> -->
-                <!-- </button> -->
+      <main role = "main" class = "layout-main">
+        {{ partial "main-index.html" . }}
+      </main>
 
-                <div class="navbar-collapse collapse" id="navbar9">
-                    <ul class="navbar-nav ml-auto">
-                        {{ $currentPage := . }}
-                        {{ range .Site.Menus.main }}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ .URL }}"> {{ .Name }}</a>
-                        </li>
-                        {{end}}
-                    </ul>
-                </div>
-        </nav>
-
-        <main role="main" class="col-lg-9 col-md-8 ml-auto pt-3 px-4" id="cont">
-            <br>
-            <br>
-            <h1 class = "col-lg-8 offset-lg-2 col-md-12 text-center">
-                {{ .Params.title | markdownify }}
-            </h1>
-            <br>
-            <div class = "col-lg-8 offset-lg-2 col-md-12 text-center">
-                {{ partial "list-authors.html" . }}
-            </div>
-            <br>
-            <br>
-
-            <div class="col-lg-10 offset-lg-1 col-md-12 offset-md-0 col-sm-10
-                offset-sm-1 col-xs-12 text-justify homepage-text">
-                {{ .Content }}
-            </div>
-        </main>
+      <footer class="footer bg-light fixed-bottom text-muted layout-footer">
+        {{ partial "footer.html" .}}
+      </footer>
 
     </div>
-</div>
+    {{ partial "scripts.html" .}}
+  </body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<script>
-$(document).ready(function(){
-    $("#menu-toggle").click(function(){
-        // sidebar: show and hide
-        $("#sideid").toggleClass("toggled");
-        $("#sideid").toggleClass("d-block d-none");
-        // extra small devices
-        $("#navtop").toggleClass("offset-0 offset-8");
-        // small devices
-        $("#navtop").toggleClass("offset-sm-0 offset-sm-6");
-        // medium devices
-        $("#navtop").toggleClass("offset-md-0 offset-md-4");
-        $("#navtop").toggleClass("col-md-12 col-md-8");
-        $("#cont").toggleClass("col-md-12 col-md-8");
-        // large devices
-        $("#navtop").toggleClass("offset-lg-0 offset-lg-3");
-        $("#navtop").toggleClass("col-lg-12 col-lg-9");
-        $("#cont").toggleClass("col-lg-12 col-lg-9");
-  });
-});
-</script>
-
-{{ partial "footer.html" . }}
+</html>

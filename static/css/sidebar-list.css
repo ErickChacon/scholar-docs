@@ -1,0 +1,24 @@
+/* Sidebar list with customized indices  */
+
+.sidebar-sticky ol ol {
+    counter-reset: subsection;
+    padding-left: 15px;
+}
+
+.sidebar-sticky ol ol > li {
+    counter-increment: subsection;
+}
+
+.sidebar-sticky ol ol ol {
+    padding-left: 30px;
+}
+
+.sidebar-sticky ol ol ol > li {
+    display: block;
+}
+
+.sidebar-sticky ol ol ol > li::before {
+    content: counters(subsection, ".") ".";
+    margin-left: -28px;
+}
+

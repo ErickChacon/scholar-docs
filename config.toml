@@ -1,0 +1,35 @@
+baseURL = "https://erickchacon.gitlab.io/birthweight/"
+languageCode = "en-uk"
+title = "Rainfall variability and birth outcomes in Amazonia"
+theme = "zero"
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+preserveTaxonomyNames = true
+footnotereturnlinkcontents = "↩"
+summaryLength = 40
+
+[params.social]
+    gitlab = "https://gitlab.com/ErickChacon/birthweight"
+    envelope = "mailto:e.chaconmontalvan@gmail.com"
+    twitter = "https://twitter.com/ErickChaconMon"
+    linkedin = "https://www.linkedin.com/in/erick-chacon-montalvan-7bba9141"
+
+[params]
+    description = "A website built through Hugo and blogdown."
+    footer = "Powered by [Hugo](https://gohugo.io/) and [Boostrap](https://getbootstrap.com/)"
+    author = "Dr. Erick A. Chacón Montalván"
+    image = "erick-chacon.jpg"
+    role = "Senior Research Associate in Environmental Data Science"
+    organization = "Lancaster University"
+    faicon = 'fa-tint'
+
+
+[[menu.main]]
+    name = "DOI"
+    url = "https://doi.org/10.1038/s41893-021-00684-9"
+    weight = 10
+[[menu.main]]
+    name = "Erick Chacón"
+    url = "https://erickchacon.gitlab.io/"
+    weight = 20
+
+

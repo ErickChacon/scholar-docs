@@ -1,48 +1,49 @@
+<div class = "sidebar-sticky">
+  <div style="margin-left:-5px">
+  <ol type="I" id="mainsidebar">
+      {{ $current_page := .Page }}
+      {{ $current_section := .Page.Section }}
+      {{ $sections := sort .Site.Sections "RelPermalink" }}
+      {{ $len_sections := len $sections }}
+      {{ $sublist_class := "collapse"}}
+      {{ $sublist_area := "false"}}
+      {{ range (seq $len_sections) }}
+          {{ $ix := sub . 1}}
+          {{ $section := index $sections $ix }}
+          {{ if (eq $current_section $section.Section) }}
+              {{ $sublist_class = "collapse show"}}
+              {{ $sublist_area = "true"}}
+          {{ else }}
+              {{ $sublist_class = "collapse"}}
+              {{ $sublist_area = "false"}}
+          {{ end }}
+          <li>
+              <a class="text-dark collapsed" href="#"  data-bs-toggle="collapse" data-bs-target="#list{{ $ix }}" aria-expanded="false" aria-controls="list{{ $ix }}" id="chapter{{ $ix }}">{{ $section.Title | markdownify }}</a>
+              <ol id="list{{ $ix }}" class="{{ $sublist_class }}" aria-labelledby="chapter{{ $ix }}" data-bs-parent="#mainsidebar">
+                  {{ range sort $section.Pages "RelPermalink" }}
+                  {{ template "sidebar" (dict "p" . "w" $current_page) }}
+                  {{ end }}
+              </ol>
+          </li>
+      {{ end }}
+  </ol>
 
-<div style="margin-left:-5px">
-<ol type="I" id="mainsidebar">
-    {{ $current_page := .Page }}
-    {{ $current_section := .Page.Section }}
-    {{ $sections := sort .Site.Sections "RelPermalink" }}
-    {{ $len_sections := len $sections }}
-    {{ $sublist_class := "collapse"}}
-    {{ $sublist_area := "false"}}
-    {{ range (seq $len_sections) }}
-        {{ $ix := sub . 1}}
-        {{ $section := index $sections $ix }}
-        {{ if (eq $current_section $section.Section) }}
-            {{ $sublist_class = "collapse show"}}
-            {{ $sublist_area = "true"}}
-        {{ else }}
-            {{ $sublist_class = "collapse"}}
-            {{ $sublist_area = "false"}}
-        {{ end }}
-        <li>
-            <a class="btn-link text-dark collapsed" href="#"  data-toggle="collapse" data-target="#list{{ $ix }}" aria-expanded="false" aria-controls="list{{ $ix }}" id="chapter{{ $ix }}">{{ $section.Title | markdownify }}</a>
-            <ol id="list{{ $ix }}" class="{{ $sublist_class }}" aria-labelledby="chapter{{ $ix }}" data-parent="#mainsidebar">
-                {{ range sort $section.Pages "RelPermalink" }}
-                {{ template "sidebar" (dict "p" . "w" $current_page) }}
-                {{ end }}
-            </ol>
-        </li>
-    {{ end }}
-</ol>
-
-{{ define "sidebar" }}
-{{ $current_page := .w }}
-{{ if .p.Pages }}
-<li>
-    <a class="text-secondary">{{ .p.Title | markdownify }}</a>
-    <ol>
-        {{ range sort .p.Pages "RelPermalink" }}
-        {{ template "sidebar" (dict "p" . "w" $current_page) }}
-        {{ end }}
-    </ol>
-</li>
-{{ else }}
-<li>
-    {{ partial "item-link-file.html" (dict "p" .p "w" $current_page) }}
-</li>
-{{ end }}
-{{ end }}
+  {{ define "sidebar" }}
+  {{ $current_page := .w }}
+  {{ if .p.Pages }}
+  <li>
+      <a class="text-secondary">{{ .p.Title | markdownify }}</a>
+      <ol>
+          {{ range sort .p.Pages "RelPermalink" }}
+          {{ template "sidebar" (dict "p" . "w" $current_page) }}
+          {{ end }}
+      </ol>
+  </li>
+  {{ else }}
+  <li>
+      {{ partial "item-link-file.html" (dict "p" .p "w" $current_page) }}
+  </li>
+  {{ end }}
+  {{ end }}
+  </div>
 </div>

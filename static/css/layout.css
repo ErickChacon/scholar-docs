@@ -1,0 +1,109 @@
+/* Main layouts */
+
+.docs-layout {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 56px 1fr 37px;
+}
+
+@media (max-width: 767px) {
+    .docs-layout {
+        grid-template-areas:
+        "header header"
+        "main main"
+        "footer footer";
+    }
+    .docs-layout-dual {
+        display: grid;
+        grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 56px 1fr 37px;
+    }
+}
+
+@media (min-width: 768px) {
+    .docs-layout-single {
+        display: grid;
+        grid-template-areas:
+            "header header"
+            "main main"
+            "footer footer";
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 56px 1fr 37px;
+    }
+}
+
+/* Header */
+
+.layout-header {
+    grid-area: header;
+    position: sticky;
+    top: 0;
+    background: yellow;
+    z-index: 1;
+}
+
+/* Sidebar */
+
+.layout-sidebar {
+    grid-area: sidebar;
+    position: sticky;
+    top: 56px;
+    align-self: start;
+    height: calc(100vh - 56px - 37px);
+    box-shadow: inset -1px -1px 5px rgba(0, 0, 0, .1);
+    display: block;
+}
+
+@media (max-width: 767px) {
+    .layout-sidebar {
+        display: none;
+    }
+    .layout-sidebar-dual {
+        display: block;
+    }
+ }
+
+@media (min-width: 768px) {
+    .layout-sidebar-single {
+        display: none;
+    }
+}
+
+.sidebar-sticky {
+    /* position: -webkit-sticky; */
+    position: sticky;
+    top: 0px;
+    height: calc(100vh - 56px - 37px);
+    padding: 3px;
+    padding-right: 3px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+/* Main */
+
+.layout-main {
+    grid-area: main;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    overflow-x: hidden;
+}
+
+/* Footer */
+
+.layout-footer {
+    grid-area: footer;
+    position: fixed;
+    bottom: 0;
+    background: green;
+}
