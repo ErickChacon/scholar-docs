@@ -3,7 +3,7 @@
 <div class="container-fluid">
     <div class="row">
 
-        <div class="col-lg-3 col-md-4 col-sm-8 col-10 d-none d-md-block bg-light sidebar" id="sideid">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-8 d-none d-md-block bg-light sidebar" id="sideid">
             <div class="sidebar-sticky border-right">
                 <nav class="navbar navbar-expand navbar-dark bg-light border-bottom">
                         <input class="form-control" type="search" placeholder="Search" aria-label="Search">
@@ -18,12 +18,12 @@
                 <button class="btn btn-outline-secondary" type="button" id="menu-toggle">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand pl-3 mr-auto" href=" {{ .Site.BaseURL }}">
+                <a class="h5 pl-3 mr-auto text-light" href=" {{ .Site.BaseURL }}">
                     {{ .Site.Title | markdownify }}
                 </a>
-                <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbar9">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <!-- <button class="navbar&#45;toggler float&#45;right" type="button" data&#45;toggle="collapse" data&#45;target="#navbar9"> -->
+                <!--     <span class="navbar&#45;toggler&#45;icon"></span> -->
+                <!-- </button> -->
 
                 <div class="navbar-collapse collapse" id="navbar9">
                     <ul class="navbar-nav ml-auto">
@@ -42,7 +42,7 @@
             <div class="col-lg-10 offset-lg-1 col-md-12 offset-md-0 col-sm-10
                 offset-sm-1 col-xs-12 text-justify homepage-text">
             <br>
-            <h1> {{ .Params.title }} </h1>
+            <h1> {{ .Params.title | markdownify }} </h1>
             <br>
                 {{ .Content }}
             </div>
@@ -56,10 +56,13 @@
 <script>
 $(document).ready(function(){
     $("#menu-toggle").click(function(){
-        // small devices
-        $("#sideid").toggleClass("d-block d-none");
-
+        // sidebar: show and hide
         $("#sideid").toggleClass("toggled");
+        $("#sideid").toggleClass("d-block d-none");
+        // extra small devices
+        $("#navtop").toggleClass("offset-0 offset-8");
+        // small devices
+        $("#navtop").toggleClass("offset-sm-0 offset-sm-6");
         // medium devices
         $("#navtop").toggleClass("offset-md-0 offset-md-4");
         $("#navtop").toggleClass("col-md-12 col-md-8");
@@ -71,5 +74,6 @@ $(document).ready(function(){
   });
 });
 </script>
+
 
 {{ partial "footer.html" . }}

@@ -1,0 +1,24 @@
+
+<p class="h5">
+{{ $authors := .Params.author }}
+{{ $len_author := len $authors }}
+{{ range (seq $len_author) }}
+    {{ $i := sub . 1 }}
+
+    <!-- define separator -->
+    {{ $sep := ","}}
+    {{ if (eq $i (sub $len_author 2)) }}
+        {{ $sep = " &"}}
+    {{ else if (eq $i (sub $len_author 1)) }}
+        {{ $sep = ""}}
+    {{ end }}
+
+    <!-- print author -->
+    {{ $current_author := index $authors $i }}
+    {{ if (isset $current_author "link") }}
+        <a href="{{ $current_author.link }}" target="_blank">{{ $current_author.name }}</a>{{ $sep }}
+    {{ else }}
+        <a>{{ $current_author.name }}</a>{{ $sep}}
+    {{ end }}
+{{ end }}
+</p>

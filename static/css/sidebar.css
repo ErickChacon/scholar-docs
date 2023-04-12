@@ -1,5 +1,13 @@
 /* https://stackoverflow.com/questions/10405945/html-ordered-list-1-1-1-2-nested-counters-and-scope-not-working */
 
+.navbar-brand5 {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: 4rem;
+  /* background-color: rgba(0, 0, 0, .25); */
+  /* box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25); */
+}
+
 
 .sidebar {
   position: fixed;
@@ -14,8 +22,8 @@
 /* Medium devices */
 @media (min-width: 768px) {
     .toggled {
-        /* display:node; */
-        width: 0px;
+        display:node;
+        /* width: 0px; */
     }
 }
 
@@ -33,51 +41,22 @@
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
 
-.sidebar-sticky ol {
-    counter-reset: item;
+.active {
+    text-decoration:underline;
 }
-.sidebar-sticky ol > li {
-    counter-increment: item;
-    margin-left: -10px;
+
+.sidebar-sticky ol ol {
+    counter-reset: subsection;
+    padding-left: 10px;
 }
 .sidebar-sticky ol ol > li {
     display: block;
-    margin-left: -10px;
+    counter-increment: subsection;
 }
-.sidebar-sticky ol ol > li:before {
-    content: counters(item, ".") ". ";
-    margin-left: -25px;
+.sidebar-sticky ol ol > li::before {
+    content: counters(subsection, ".") ".";
+    margin-left: -20px;
 }
-
-/* @media (min-width: 992px) { */
-/*     .collapsed { */
-/*         display: block; */
-/*         margin-left: -25%; /* same width as sidebar */ */
-/*     } */
-/* } */
-
-
-/* #wrapper.toggled .sidebar { */
-/*   margin-left: -50; */
-/* } */
-
-/* format of table of content list */
-/* .sidebar-sticky ol { */
-/*   /* counter-reset: item; */ */
-/*   margin-left:-15px; */
-/* } */
-/* .sidebar-sticky li { */
-/*   display: block; */
-/*   margin-left:-15px; */
-/* } */
-/* .sidebar-sticky li:before { */
-/*   content: counters(item, ".") " "; */
-/*   counter-increment: item; */
-/*   padding-right:5px; */
-/*   /* margin-left:-30px; */ */
-/* } */
-
-
 
 .collap {
   /* hide it for small displays*/
@@ -88,68 +67,3 @@
     display: list-item;
 }
 
-/* #sidebarr { */
-/*   /* for the animation */ */
-/*   transition: margin 0.3s ease; */
-/* } */
-/*  */
-/* #sidebarre { */
-/*   /* for the animation */ */
-/*   transition: margin 0.3s ease; */
-/* } */
-
-
-/* #navbarNav { */
-/*     background: blue; */
-/* } */
-/*  */
-/*  */
-/* /* .collapsed { */ */
-/* /*   /* hide it for small displays*/ */ */
-/* /*   display: none; */ */
-/* /* } */ */
-/*  */
-/*  */
-/* #sidebar-wrapper { */
-/*   min-height: 100vh; */
-/*   max-height: 70vh; */
-/*   margin-left: -15rem; */
-/*   -webkit-transition: margin .25s ease-out; */
-/*   -moz-transition: margin .25s ease-out; */
-/*   -o-transition: margin .25s ease-out; */
-/*   transition: margin .25s ease-out; */
-/*   /* overflow-x: auto; */ */
-/*   overflow-y: auto; */
-/* } */
-/*  */
-/* #sidebar-wrapper .sidebar-heading { */
-/*   padding: 0.875rem 1.25rem; */
-/*   font-size: 1rem; */
-/* } */
-/*  */
-/* #sidebar-wrapper .list-group { */
-/*   width: 15rem; */
-/* } */
-/*  */
-/* #page-content-wrapper { */
-/*   min-width: 100vw; */
-/* } */
-/*  */
-/* #wrapper.toggled #sidebar-wrapper { */
-/*   margin-left: 0; */
-/* } */
-/*  */
-/* /* @media (min-width: 768px) { */ */
-/* /*   #sidebar-wrapper { */ */
-/* /*     margin-left: 0; */ */
-/* /*   } */ */
-/* /*  */ */
-/* /*   #page-content-wrapper { */ */
-/* /*     min-width: 0; */ */
-/* /*     width: 100%; */ */
-/* /*   } */ */
-/* /*  */ */
-/* /*   #wrapper.toggled #sidebar-wrapper { */ */
-/* /*     margin-left: -15rem; */ */
-/* /*   } */ */
-/* /* } */ */

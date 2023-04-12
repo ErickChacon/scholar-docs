@@ -1,42 +1,7 @@
 {{ partial "header.html" . }}
 
-
 <div class="container-fluid">
     <div class="row">
-
-        <div class="col-lg-3 col-md-4 col-sm-6 col-8 d-none d-md-block bg-light sidebar" id="sideid">
-            <div class="sidebar-sticky border-right">
-                <nav class="navbar navbar-expand navbar-dark bg-light border-bottom">
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                </nav>
-                {{ partial "sidebar-files.html" . }}
-            </div>
-        </div>
-
-
-        <nav class="navbar navbar-expand-md col-lg-9 col-md-8 offset-lg-3 offset-md-4
-            navbar-dark bg-dark sticky-top" id="navtop">
-                <button class="btn btn-outline-secondary" type="button" id="menu-toggle">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <a class="h5 pl-3 mr-auto text-light" href=" {{ .Site.BaseURL }}">
-                    {{ .Site.Title | markdownify }}
-                </a>
-                <!-- <button class="navbar&#45;toggler float&#45;right" type="button" data&#45;toggle="collapse" data&#45;target="#navbar9"> -->
-                <!--     <span class="navbar&#45;toggler&#45;icon"></span> -->
-                <!-- </button> -->
-
-                <div class="navbar-collapse collapse" id="navbar9">
-                    <ul class="navbar-nav ml-auto">
-                        {{ $currentPage := . }}
-                        {{ range .Site.Menus.main }}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ .URL }}"> {{ .Name }}</a>
-                        </li>
-                        {{end}}
-                    </ul>
-                </div>
-        </nav>
 
         <main role="main" class="col-lg-9 col-md-8 ml-auto pt-3 px-4" id="cont">
             <br>

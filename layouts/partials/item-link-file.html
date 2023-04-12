@@ -1,6 +1,4 @@
-<!-- <i class="fa&#45;li fa fa&#45;file text&#45;secondary"></i> -->
-<!-- <a href="{{ .Permalink }}" class="font&#45;italic text&#45;secondary text&#45;justify"> -->
-<a href="{{ .Permalink }}" class="font-italic text-justify">
-  {{ .Title }}
+<a href="{{ .p.Permalink }}" class="text-justify {{ if (eq .p .w)}}active{{ end }}">
+  {{ .p.Title | markdownify }}
 </a>
 
