@@ -21,6 +21,10 @@
     color: var(--bs-link-color);
 }
 
+.layout-footer .shadow-top {
+    box-shadow: inset 0px 1px 5px rgba(0, 0, 0, .1);
+}
+
 /* Text format */
 
 .text-justify {

@@ -58,7 +58,7 @@
     top: 56px;
     align-self: start;
     height: calc(100vh - 56px - 37px);
-    box-shadow: inset -1px -1px 5px rgba(0, 0, 0, .1);
+    box-shadow: inset -1px 0px 5px rgba(0, 0, 0, .1);
     display: block;
 }
 
@@ -105,5 +105,4 @@
     grid-area: footer;
     position: fixed;
     bottom: 0;
-    background: green;
 }
