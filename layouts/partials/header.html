@@ -9,9 +9,6 @@
       </button>
     </form>
 
-    <!-- brand -->
-    <a class="navbar-brand d-none d-sm-block" href=" {{ .Site.BaseURL }}"> {{ .Site.Title | markdownify }} </a>
-
     <!-- toggler -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-header">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi bi-expand " fill="currentColor" viewBox="0 0 16 16">
@@ -21,6 +18,8 @@
 
     <!-- navigation links -->
     <div class="collapse navbar-collapse" id="navbar-header">
+      <a class="navbar-brand" href=" {{ .Site.BaseURL }}"> {{ .Site.Title | markdownify }} </a>
+
       <ul class="navbar-nav ms-auto">
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
