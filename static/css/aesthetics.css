@@ -1,8 +1,20 @@
-a {
-    color: #007bff;
+.layout-sidebar a {
+    color: var(--bs-link-color);
     text-decoration: none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
+}
+
+.layout-sidebar a:hover {
+    text-decoration: underline;
+}
+
+.layout-sidebar .active-link {
+    text-decoration:underline;
+}
+
+.navbar-text a {
+    color: var(--bs-link-color);
 }
 
 code {
@@ -13,12 +25,8 @@ code {
   box-shadow: 2px 2px 2px #eee;
 }
 
-
 .text-justify {
     text-align: justify;
 }
 
-.active-link {
-    text-decoration:underline;
-}
 

@@ -1,7 +1,7 @@
 baseURL = "https://erickchacon.gitlab.io/birthweight/"
 languageCode = "en-uk"
 title = "Rainfall variability and birth outcomes in Amazonia"
-theme = "zero"
+theme = "scholar-docs"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 preserveTaxonomyNames = true
 footnotereturnlinkcontents = "↩"
