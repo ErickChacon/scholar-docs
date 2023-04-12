@@ -1,18 +1,17 @@
-<br>
-<!-- <h1 class = "col-lg-8 offset-lg-2 col-md-12 text-center"> -->
-<h1 class = "col-10 offset-1 text-center">
-  {{ .Params.title | markdownify }}
-</h1>
+<div class = "container">
+  <br>
+  <h1 class="col-xxl-8 offset-xxl-2 col-lg-10 offset-lg-1 text-center">
+    {{ .Params.title | markdownify }}
+  </h1>
 
-<br>
-<!-- <div class = "col-lg-8 offset-lg-2 col-md-12 text-center"> -->
-<div class = "col-10 offset-1 text-center">
-  {{ partial "list-authors.html" . }}
-</div>
+  <br>
+  <div class="col-xxl-6 offset-xxl-3 col-lg-8 offset-lg-2 text-center">
+    {{ partial "list-authors.html" . }}
+  </div>
 
-<br>
-<br>
-<!-- <div class="col-lg-8 offset-lg-2 col-md-12 offset-md-0 text-justify"> -->
-<div class="col-10 offset-1 text-justify">
-    {{ .Content }}
+  <br>
+  <br>
+  <div class="col-xxl-8 offset-xxl-2 col-lg-10 offset-lg-1 text-justify">
+      {{ .Content }}
+  </div>
 </div>
