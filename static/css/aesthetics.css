@@ -1,4 +1,5 @@
 /* Link format inside sidebar */
+
 .layout-sidebar a {
     color: var(--bs-link-color);
     text-decoration: none;
@@ -15,16 +16,19 @@
 }
 
 /* Link format inside footer */
+
 .layout-footer .navbar-text a {
     color: var(--bs-link-color);
 }
 
 /* Text format */
+
 .text-justify {
     text-align: justify;
 }
 
 /* Code format */
+
 code {
   background: #f9f9f9;
   color: black;
