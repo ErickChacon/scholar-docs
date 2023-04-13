@@ -15,13 +15,13 @@ summaryLength = 40
 
 [params]
     description = "A website built through Hugo and blogdown."
-    footer = "Powered by [Hugo](https://gohugo.io/) and [Boostrap](https://getbootstrap.com/)"
+    footer = "Powered by [Hugo](https://gohugo.io/) and [Bootstrap](https://getbootstrap.com/)"
     author = "Dr. Erick A. Chacón Montalván"
     image = "erick-chacon.jpg"
     role = "Senior Research Associate in Environmental Data Science"
     organization = "Lancaster University"
     faicon = 'fa-tint'
-
+    sidebar = true
 
 [[menu.main]]
     name = "DOI"
