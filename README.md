@@ -14,6 +14,8 @@ to show documentation.
   folder. This way you can easily navigate all the pages of your
   project. Each folder should contain an `_index.html` file with a `title` on
   the `yaml` section.
+- You can remove the sidebar setting up the parameter `sidebar = false` in the
+  `config.toml` file.
 - The `_index.html` or `_index.rm` main file of the webpage can contain a list
   of authors and webpages to be shown in the webpage.
 - It includes a sticky header. You can define the desired links into the

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand pt-0 pb-0 shadow-top">
-  <div class="container-fluid">
+  <div class="{{ if eq .Site.Params.sidebar true }} container-fluid {{ else }} container {{ end }}">
     <ul class="navbar-nav me-auto">
           {{ range $name, $path := .Site.Params.social }}
           <li class="nav-item">

@@ -6,15 +6,17 @@
   </head>
 
   <body>
-    <div class = "docs-layout" id = "my-lay">
+    <div class = "{{ if eq .Site.Params.sidebar true }} docs-layout {{ else }} docs-layout-simple {{ end }}" id = "my-lay">
 
       <header class = "layout-header">
         {{ partial "header.html" .}}
       </header>
 
+      {{ if eq .Site.Params.sidebar true }}
       <aside class = "layout-sidebar bg-light">
         {{ partial "sidebar-files.html" . }}
       </aside>
+      {{ end }}
 
       <main role = "main" class = "layout-main">
         {{ partial "main-index.html" . }}
