@@ -16,7 +16,7 @@ to show documentation.
   the `yaml` section.
 - You can remove the sidebar setting up the parameter `sidebar = false` in the
   `config.toml` file.
-- The `_index.html` or `_index.rm` main file of the webpage can contain a list
+- The `_index.html` or `_index.md` main file of the webpage can contain a list
   of authors and webpages to be shown in the webpage.
 - It includes a sticky header. You can define the desired links into the
   header. These elements should be defined in `[menu.main]` on the
